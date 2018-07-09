@@ -17,6 +17,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+        
+        configuration.applicationId = @"instagramjoel";
+        configuration.clientKey = @"JoeyJoeyJoey";
+        configuration.server = @"http://instagramjoel.herokuapp.com/parse";
+    }];
+    
+    [Parse initializeWithConfiguration:config];
+    
     return YES;
 }
 
