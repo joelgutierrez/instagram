@@ -21,10 +21,15 @@
         
         configuration.applicationId = @"instagramjoel";
         configuration.clientKey = @"JoeyJoeyJoey";
-        configuration.server = @"http://instagramjoel.herokuapp.com/parse";
+        configuration.server = @"https://instagramjoel.herokuapp.com/parse";
     }];
     
     [Parse initializeWithConfiguration:config];
+    
+    if (PFUser.currentUser) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
+    }
     
     return YES;
 }

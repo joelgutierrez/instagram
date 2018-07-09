@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		19F4B06020F40C3700C9F830 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B05F20F40C3700C9F830 /* AppDelegate.m */; };
-		19F4B06320F40C3700C9F830 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B06220F40C3700C9F830 /* ViewController.m */; };
 		19F4B06620F40C3700C9F830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06420F40C3700C9F830 /* Main.storyboard */; };
 		19F4B06820F40C3800C9F830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06720F40C3800C9F830 /* Assets.xcassets */; };
 		19F4B06B20F40C3800C9F830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06920F40C3800C9F830 /* LaunchScreen.storyboard */; };
 		19F4B06E20F40C3800C9F830 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B06D20F40C3800C9F830 /* main.m */; };
 		19F4B07820F40C3800C9F830 /* instagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B07720F40C3800C9F830 /* instagramTests.m */; };
 		19F4B08320F40C3800C9F830 /* instagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B08220F40C3800C9F830 /* instagramUITests.m */; };
+		19F4B09320F41AB200C9F830 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B09220F41AB200C9F830 /* LoginViewController.m */; };
+		19F4B09620F4220800C9F830 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B09520F4220800C9F830 /* HomeViewController.m */; };
 		D0217CDB43B91C84C042B386 /* libPods-instagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0E6D64BED5186560E39FBA /* libPods-instagram.a */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +40,6 @@
 		19F4B05B20F40C3700C9F830 /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F4B05E20F40C3700C9F830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19F4B05F20F40C3700C9F830 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		19F4B06120F40C3700C9F830 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		19F4B06220F40C3700C9F830 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		19F4B06520F40C3700C9F830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19F4B06720F40C3800C9F830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19F4B06A20F40C3800C9F830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +51,10 @@
 		19F4B07E20F40C3800C9F830 /* instagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F4B08220F40C3800C9F830 /* instagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = instagramUITests.m; sourceTree = "<group>"; };
 		19F4B08420F40C3800C9F830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19F4B09120F41AB200C9F830 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		19F4B09220F41AB200C9F830 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		19F4B09420F4220800C9F830 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		19F4B09520F4220800C9F830 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		6E0E6D64BED5186560E39FBA /* libPods-instagram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instagram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F5FE45D483869EC3ED807E /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		DCDDAF24B15DB59633A051C4 /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,10 +111,9 @@
 		19F4B05D20F40C3700C9F830 /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				19F4B09020F41A6700C9F830 /* View Controllers */,
 				19F4B05E20F40C3700C9F830 /* AppDelegate.h */,
 				19F4B05F20F40C3700C9F830 /* AppDelegate.m */,
-				19F4B06120F40C3700C9F830 /* ViewController.h */,
-				19F4B06220F40C3700C9F830 /* ViewController.m */,
 				19F4B06420F40C3700C9F830 /* Main.storyboard */,
 				19F4B06720F40C3800C9F830 /* Assets.xcassets */,
 				19F4B06920F40C3800C9F830 /* LaunchScreen.storyboard */,
@@ -137,6 +139,17 @@
 				19F4B08420F40C3800C9F830 /* Info.plist */,
 			);
 			path = instagramUITests;
+			sourceTree = "<group>";
+		};
+		19F4B09020F41A6700C9F830 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19F4B09120F41AB200C9F830 /* LoginViewController.h */,
+				19F4B09220F41AB200C9F830 /* LoginViewController.m */,
+				19F4B09420F4220800C9F830 /* HomeViewController.h */,
+				19F4B09520F4220800C9F830 /* HomeViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		3FEDA436AFE8A0C58EBBF940 /* Frameworks */ = {
@@ -327,9 +340,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F4B06320F40C3700C9F830 /* ViewController.m in Sources */,
 				19F4B06E20F40C3800C9F830 /* main.m in Sources */,
 				19F4B06020F40C3700C9F830 /* AppDelegate.m in Sources */,
+				19F4B09320F41AB200C9F830 /* LoginViewController.m in Sources */,
+				19F4B09620F4220800C9F830 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
