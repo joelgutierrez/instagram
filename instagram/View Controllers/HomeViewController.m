@@ -29,10 +29,6 @@
     }];
 }
 
-- (IBAction)composeTap:(id)sender {
-    
-}
-
 /*
 #pragma mark - Navigation
 

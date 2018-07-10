@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  ComposeViewController.h
 //  instagram
 //
 //  Created by Joel Gutierrez on 7/9/18.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 
-@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ComposeViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
