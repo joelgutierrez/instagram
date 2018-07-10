@@ -17,6 +17,7 @@
 		19F4B09320F41AB200C9F830 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B09220F41AB200C9F830 /* LoginViewController.m */; };
 		19F4B09620F4220800C9F830 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B09520F4220800C9F830 /* HomeViewController.m */; };
 		19F4B09920F433A700C9F830 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B09820F433A700C9F830 /* ComposeViewController.m */; };
+		19F4B09D20F5264400C9F830 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B09C20F5264400C9F830 /* Post.m */; };
 		D0217CDB43B91C84C042B386 /* libPods-instagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0E6D64BED5186560E39FBA /* libPods-instagram.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		19F4B09520F4220800C9F830 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		19F4B09720F433A700C9F830 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		19F4B09820F433A700C9F830 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		19F4B09B20F5264400C9F830 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		19F4B09C20F5264400C9F830 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		6E0E6D64BED5186560E39FBA /* libPods-instagram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instagram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F5FE45D483869EC3ED807E /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		DCDDAF24B15DB59633A051C4 /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 		19F4B05D20F40C3700C9F830 /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				19F4B09A20F5262400C9F830 /* Model */,
 				19F4B09020F41A6700C9F830 /* View Controllers */,
 				19F4B05E20F40C3700C9F830 /* AppDelegate.h */,
 				19F4B05F20F40C3700C9F830 /* AppDelegate.m */,
@@ -155,6 +159,15 @@
 				19F4B09820F433A700C9F830 /* ComposeViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		19F4B09A20F5262400C9F830 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19F4B09B20F5264400C9F830 /* Post.h */,
+				19F4B09C20F5264400C9F830 /* Post.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3FEDA436AFE8A0C58EBBF940 /* Frameworks */ = {
@@ -346,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F4B06E20F40C3800C9F830 /* main.m in Sources */,
+				19F4B09D20F5264400C9F830 /* Post.m in Sources */,
 				19F4B06020F40C3700C9F830 /* AppDelegate.m in Sources */,
 				19F4B09320F41AB200C9F830 /* LoginViewController.m in Sources */,
 				19F4B09920F433A700C9F830 /* ComposeViewController.m in Sources */,

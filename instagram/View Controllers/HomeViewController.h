@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "LoginViewController.h"
+#import "AppDelegate.h"
 
-@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewController : UIViewController
+// <UITableViewDelegate, UITableViewDataSource>
 
 @end
