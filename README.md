@@ -11,8 +11,8 @@ The following **required** functionality is completed:
 - [x] User can sign up to create a new account using Parse authentication
 - [x] User can log in and log out of his or her account
 - [x] The current signed in user is persisted across app restarts
-- [ ] User can take a photo, add a caption, and post it to "Instagram"
-- [ ] User can view the last 20 posts submitted to "Instagram"
+- [x] User can take a photo, add a caption, and post it to "Instagram"
+- [x] User can view the last 20 posts submitted to "Instagram"
 - [ ] User can pull to refresh the last 20 posts submitted to "Instagram"
 - [ ] User can tap a post to view post details, including timestamp and caption.
 
@@ -38,6 +38,8 @@ The following **additional** features are implemented:
 - [x] on user log out, new pages are not created
 - [x] error warning is displayed if the user leaves any of the textboxes empty when trying to sign up or login
 - [ ] autolayout
+- [ ] show error message when user tries to access camera when not available
+
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1.

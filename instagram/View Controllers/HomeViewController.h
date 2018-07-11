@@ -10,8 +10,11 @@
 #import <Parse/Parse.h>
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "Post.h"
+#import "PostTableViewCell.h"
+#import "ComposeViewController.h"
 
-@interface HomeViewController : UIViewController
-// <UITableViewDelegate, UITableViewDataSource>
+//TODO: uncomment protocols
+@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
 
 @end

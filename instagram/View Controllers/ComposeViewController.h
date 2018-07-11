@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+
+@protocol ComposeViewControllerDelegate
+
+- (void)didPost;
+
+@end
+
 
 @interface ComposeViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (nonatomic, weak) id<ComposeViewControllerDelegate> delegate;
 
 @end
