@@ -13,6 +13,7 @@
 #import "Post.h"
 #import "PostTableViewCell.h"
 #import "ComposeViewController.h"
+#import "DetailsViewController.h"
 
 //TODO: uncomment protocols
 @interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>

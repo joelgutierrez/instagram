@@ -60,8 +60,8 @@
         if(error != nil) {
             NSLog(@"error: could not post.");
         } else {
-            [self.delegate didPost];
             NSLog(@"Successful post.");
+            [self.delegate didPost];
             [self dismissViewControllerAnimated:true completion:nil];
         }
     }];

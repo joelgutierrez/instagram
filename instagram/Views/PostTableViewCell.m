@@ -17,7 +17,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
@@ -26,5 +25,7 @@
     self.photoImageView.file = post[@"image"];
     [self.photoImageView loadInBackground];
 }
+
+
 
 @end

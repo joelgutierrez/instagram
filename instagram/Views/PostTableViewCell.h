@@ -16,4 +16,6 @@
 @property (strong, nonatomic) Post *post;
 @property (weak, nonatomic) IBOutlet PFImageView *photoImageView;
 
+
+
 @end

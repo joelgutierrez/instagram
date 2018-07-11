@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19887B5D20F663AD0073727E /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19887B5C20F663AD0073727E /* DetailsViewController.m */; };
 		19F4B06020F40C3700C9F830 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B05F20F40C3700C9F830 /* AppDelegate.m */; };
 		19F4B06620F40C3700C9F830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06420F40C3700C9F830 /* Main.storyboard */; };
 		19F4B06820F40C3800C9F830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06720F40C3800C9F830 /* Assets.xcassets */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19887B5B20F663AD0073727E /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		19887B5C20F663AD0073727E /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		19F4B05B20F40C3700C9F830 /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F4B05E20F40C3700C9F830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19F4B05F20F40C3700C9F830 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19887B5A20F65CF70073727E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19F4B09E20F5655700C9F830 /* PostTableViewCell.h */,
+				19F4B09F20F5655700C9F830 /* PostTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		19F4B05220F40C3700C9F830 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +132,7 @@
 		19F4B05D20F40C3700C9F830 /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				19887B5A20F65CF70073727E /* Views */,
 				19F4B09A20F5262400C9F830 /* Model */,
 				19F4B09020F41A6700C9F830 /* View Controllers */,
 				19F4B05E20F40C3700C9F830 /* AppDelegate.h */,
@@ -160,6 +173,8 @@
 				19F4B09520F4220800C9F830 /* HomeViewController.m */,
 				19F4B09720F433A700C9F830 /* ComposeViewController.h */,
 				19F4B09820F433A700C9F830 /* ComposeViewController.m */,
+				19887B5B20F663AD0073727E /* DetailsViewController.h */,
+				19887B5C20F663AD0073727E /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -169,8 +184,6 @@
 			children = (
 				19F4B09B20F5264400C9F830 /* Post.h */,
 				19F4B09C20F5264400C9F830 /* Post.m */,
-				19F4B09E20F5655700C9F830 /* PostTableViewCell.h */,
-				19F4B09F20F5655700C9F830 /* PostTableViewCell.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,6 +389,7 @@
 				19F4B09320F41AB200C9F830 /* LoginViewController.m in Sources */,
 				19F4B09920F433A700C9F830 /* ComposeViewController.m in Sources */,
 				19F4B09620F4220800C9F830 /* HomeViewController.m in Sources */,
+				19887B5D20F663AD0073727E /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

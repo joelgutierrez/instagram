@@ -28,7 +28,6 @@
 #pragma mark - network call
 
 - (void)fetchTimeLinePosts {
-    //TODO: fix function
     // fetch data asynchronously
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
@@ -65,17 +64,14 @@
     return self.postsArray.count;
 }
 
-//TODO: implement functions
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    //TODO: make cell
     PostTableViewCell *cell = [self.timelineView dequeueReusableCellWithIdentifier:@"PostTableViewCell"];
     Post *post = self.postsArray[indexPath.row];
     cell.post = post;
-    
     return cell;
 }
 
-#pragma mark - compose post protocol
+#pragma mark - ComposeViewControllerDelegate protocol
 
 - (void)didPost {
     [self fetchTimeLinePosts];
@@ -91,7 +87,6 @@
             NSLog(@"successful log out");
             AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            
             LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
             appDelegate.window.rootViewController = loginViewController;
         }
@@ -102,11 +97,16 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     UINavigationController *navController = [segue destinationViewController];
-    ComposeViewController* composeController = (ComposeViewController*)[navController topViewController];
-    composeController.delegate = self;
+    if([segue.identifier isEqualToString:@"composeSegue"]) {
+        ComposeViewController* composeController = (ComposeViewController*)[navController topViewController];
+        composeController.delegate = self;
+    } else { //TODO: details view controller
+        DetailsViewController* detailsController = (DetailsViewController*)[navController topViewController];
+        PostTableViewCell *postCell = sender;
+        detailsController.post = postCell.post;
+        NSLog(@"post cell in segue");
+    }
 }
 
 @end
