@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
-
+#import "ParseUI.h"
+#import "Parse/Parse.h"
+#import "DateTools.h"
 
 @interface DetailsViewController : UIViewController
 

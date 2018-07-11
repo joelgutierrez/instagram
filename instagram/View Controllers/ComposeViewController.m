@@ -55,6 +55,8 @@
     return newImage;
 }
 
+#pragma mark - actions
+
 - (IBAction)postTap:(id)sender {
     [Post postUserImage:self.composeImage.image withCaption:self.composeTextField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if(error != nil) {

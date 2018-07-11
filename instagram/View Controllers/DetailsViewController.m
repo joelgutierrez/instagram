@@ -10,6 +10,9 @@
 
 @interface DetailsViewController ()
 
+@property (weak, nonatomic) IBOutlet PFImageView *detailsImage;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end
 
@@ -17,7 +20,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setPostDetails];
+}
+
+-(void) setPostDetails {
+    self.descriptionLabel.text = self.post.caption;
+    self.detailsImage.file = self.post[@"image"];
+    [self.detailsImage loadInBackground];
+    NSDate *createdAtDate = self.post.createdAt;
+    [self formatAndSetString:createdAtDate];
+}
+
+- (void) formatAndSetString:(NSDate *)createdAtDate{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    NSString *dateString = [formatter stringFromDate:createdAtDate];
+    //NSString *modString = [NSDate shortTimeAgoSinceDate:date];
+    self.timeLabel.text = dateString;
+}
+
+#pragma mark - actions
+
+- (IBAction)backTap:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 @end

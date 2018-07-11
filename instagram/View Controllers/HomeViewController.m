@@ -25,10 +25,9 @@
     [self createRefreshControl];
 }
 
-#pragma mark - network call
+#pragma mark - networking
 
 - (void)fetchTimeLinePosts {
-    // fetch data asynchronously
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
@@ -95,17 +94,15 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UINavigationController *navController = [segue destinationViewController];
     if([segue.identifier isEqualToString:@"composeSegue"]) {
         ComposeViewController* composeController = (ComposeViewController*)[navController topViewController];
         composeController.delegate = self;
-    } else { //TODO: details view controller
+    } else {
         DetailsViewController* detailsController = (DetailsViewController*)[navController topViewController];
         PostTableViewCell *postCell = sender;
         detailsController.post = postCell.post;
-        NSLog(@"post cell in segue");
     }
 }
 
