@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Post.h"
 #import "ParseUI.h"
-
+#import "DateTools.h"
 
 @interface PostTableViewCell : UITableViewCell
 
@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *topUsernameLabel;
 @property (strong, nonatomic) PFUser *userPF;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 
 @end

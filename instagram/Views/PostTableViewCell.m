@@ -8,8 +8,6 @@
 
 #import "PostTableViewCell.h"
 
-
-
 @implementation PostTableViewCell
 
 - (void)awakeFromNib {
@@ -30,6 +28,7 @@
     self.userPF = self.post[@"author"];
     self.topUsernameLabel.text = self.userPF.username;
     [self formatUsernameAndCaption];
+    [self formatTimeStamp:self.post.createdAt];
 }
 
 -(void) formatUsernameAndCaption {
@@ -39,6 +38,16 @@
     NSRange boldRange = [usernameAndCaption rangeOfString:usernameToBeBold];
     [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:14] range:boldRange];
     [self.usernameAndCaptionLabel setAttributedText:attributedString];
+}
+
+- (void) formatTimeStamp:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    NSString *modString = [NSDate shortTimeAgoSinceDate:date];
+    NSString *fullString = [modString stringByAppendingString:@" ago"];
+    self.timeLabel.text = fullString;
 }
 
 

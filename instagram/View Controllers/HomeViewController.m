@@ -33,9 +33,18 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
+    [postQuery includeKey:@"createdAt"];
     postQuery.limit = 20;
-    
-    // fetch data asynchronously
+    [self fetchDataAsynch:postQuery];
+}
+
+- (void) createRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchTimeLinePosts) forControlEvents:UIControlEventValueChanged];
+    [self.timelineView insertSubview:self.refreshControl atIndex:0];
+}
+
+-(void) fetchDataAsynch:(PFQuery *)postQuery {
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             self.postsArray = posts;
@@ -46,12 +55,6 @@
         }
         [self.refreshControl endRefreshing];
     }];
-}
-
-- (void) createRefreshControl {
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(fetchTimeLinePosts) forControlEvents:UIControlEventValueChanged];
-    [self.timelineView insertSubview:self.refreshControl atIndex:0];
 }
 
 #pragma mark - table view protocol
