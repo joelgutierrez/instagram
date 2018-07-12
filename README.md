@@ -13,14 +13,14 @@ The following **required** functionality is completed:
 - [x] The current signed in user is persisted across app restarts
 - [x] User can take a photo, add a caption, and post it to "Instagram"
 - [x] User can view the last 20 posts submitted to "Instagram"
-- [ ] User can pull to refresh the last 20 posts submitted to "Instagram"
-- [ ] User can tap a post to view post details, including timestamp and caption.
+- [x] User can pull to refresh the last 20 posts submitted to "Instagram"
+- [x] User can tap a post to view post details, including timestamp and caption.
 
 The following **optional** features are implemented:
 
-- [ ] Run your app on your phone and use the camera to take the photo
+- [x] Run your app on your phone and use the camera to take the photo
 - [ ] Style the login page to look like the real Instagram login page.
-- [ ] Style the feed to look like the real Instagram feed.
+- [x] Style the feed to look like the real Instagram feed.
 - [ ] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user. AKA, tabs for Home Feed and Profile
 - [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
 - [ ] Show the username and creation time for each post
@@ -37,7 +37,7 @@ The following **additional** features are implemented:
 
 - [x] on user log out, new pages are not created
 - [x] error warning is displayed if the user leaves any of the textboxes empty when trying to sign up or login
-- [ ] autolayout
+- [x] autolayout on home feed
 - [ ] show error message when user tries to access camera when not available
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
