@@ -32,9 +32,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     //TODO: Do something with the images (based on your use case)
+    [self resizeImage:originalImage withSize:CGSizeMake(350, 350)];
     self.composeImage.image = originalImage;
     
     [self dismissViewControllerAnimated:YES completion:nil];

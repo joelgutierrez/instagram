@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *timelineView;
-@property (strong, nonatomic) NSMutableArray *postsArray;
+@property (strong, nonatomic) NSArray *postsArray;
 
 @end
 
@@ -23,6 +23,8 @@
     [self setDataSourceAndDelegate];
     [self fetchTimeLinePosts];
     [self createRefreshControl];
+    self.timelineView.rowHeight = UITableViewAutomaticDimension;
+    self.timelineView.estimatedRowHeight = 350;
 }
 
 #pragma mark - networking
@@ -93,6 +95,7 @@
 }
 
 #pragma mark - Navigation
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UINavigationController *navController = [segue destinationViewController];
