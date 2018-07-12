@@ -1,6 +1,6 @@
 # Project 4 - *instagram*
 
-**imstagram** is a photo sharing app using Parse as its backend.
+**instagram** is a photo sharing app using Parse as its backend.
 
 Time spent: **X** hours spent in total
 
@@ -41,9 +41,8 @@ The following **additional** features are implemented:
 - [ ] show error message when user tries to access camera when not available
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
-
-1.
-2.
+1. parse - just want some more exposure with it
+2. blocks and delagation - just want more practice with it.
 
 ## Video Walkthrough
 
@@ -58,15 +57,17 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
-
+- [DateTools](github.com/MatthewYork/DateTools) - date formatting library
+- [Parse](https://github.com/itod/parsekit) - parsing library
+- [ParseUI](https://github.com/parse-community/ParseUI-iOS) - parsing user interface library
 
 ## Notes
-
-Describe any challenges encountered while building the app.
+parsing was troublesome since it was a new topic.
+delagates, but I feel more confident in them now. still need more practice though.
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2018] [Joel Gutierrez]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
