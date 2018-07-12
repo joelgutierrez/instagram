@@ -24,7 +24,7 @@
     [self fetchTimeLinePosts];
     [self createRefreshControl];
     self.timelineView.rowHeight = UITableViewAutomaticDimension;
-    self.timelineView.estimatedRowHeight = 350;
+    self.timelineView.estimatedRowHeight = 600;
 }
 
 #pragma mark - networking

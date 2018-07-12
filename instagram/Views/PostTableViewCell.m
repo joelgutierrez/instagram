@@ -8,6 +8,8 @@
 
 #import "PostTableViewCell.h"
 
+
+
 @implementation PostTableViewCell
 
 - (void)awakeFromNib {
@@ -24,6 +26,7 @@
     _post = post;
     self.photoImageView.file = post[@"image"];
     [self.photoImageView loadInBackground];
+    //self.likeCountLabel.text = 
 }
 
 
