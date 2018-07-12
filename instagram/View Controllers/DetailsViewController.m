@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setPostDetails];
+//    self.detailsTableView.rowHeight = UITableViewAutomaticDimension;
+//    self.detailsTableView.estimatedRowHeight = 600;
 }
 
 -(void) setPostDetails {

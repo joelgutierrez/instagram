@@ -19,8 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *messageButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *bookmarkButton;
-@property (weak, nonatomic) IBOutlet UILabel *usernameAndDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameAndCaptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *topUsernameLabel;
+@property (strong, nonatomic) PFUser *userPF;
 
 
 @end
