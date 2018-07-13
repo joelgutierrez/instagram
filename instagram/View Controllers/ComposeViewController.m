@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.imagePickerVC = [UIImagePickerController new];
     self.imagePickerVC.delegate = self;
     self.imagePickerVC.allowsEditing = YES;
@@ -39,10 +38,8 @@
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    
     resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
     resizeImageView.image = image;
-    
     UIGraphicsBeginImageContext(size);
     [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();

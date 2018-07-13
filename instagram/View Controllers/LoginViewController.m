@@ -20,11 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setLoginBorder];
+}
+
+-(void)setLoginBorder {
     self.loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
     self.loginButton.layer.borderWidth = 0.3;
 }
 
-#pragma mark - fields checks
+#pragma mark - field checks
 
 -(void) createEmptyUsernameWarning {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Empty username" preferredStyle:(UIAlertControllerStyleAlert)];

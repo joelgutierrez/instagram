@@ -25,7 +25,6 @@
     [self fetchInitialPosts];
     [self createRefreshControl];
     [self setTimelineLayout];
-    self.timelineView.delegate = self;
 }
 
 - (void) setDataSourceAndDelegate {
