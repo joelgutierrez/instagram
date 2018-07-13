@@ -500,6 +500,7 @@
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Qpo-bt-8Nw"/>
         <segue reference="b95-G5-0LV"/>
     </inferredMetricsTieBreakers>
 </document>
