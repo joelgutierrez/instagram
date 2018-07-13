@@ -60,6 +60,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 - [DateTools](github.com/MatthewYork/DateTools) - date formatting library
 - [Parse](https://github.com/itod/parsekit) - parsing library
 - [ParseUI](https://github.com/parse-community/ParseUI-iOS) - parsing user interface library
+- [MBProgressHUD](https://github.com/jdg/MBProgressHUD) - HUD library 
 
 ## Notes
 parsing was troublesome since it was a new topic.
