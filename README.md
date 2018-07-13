@@ -1,6 +1,6 @@
-# Project 4 - *instagram*
+# Project 4 - *Instagram*
 
-**instagram** is a photo sharing app using Parse as its backend.
+**Instagram** is a photo sharing app using Parse as its backend.
 
 Time spent: **X** hours spent in total
 
