@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19887B5D20F663AD0073727E /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19887B5C20F663AD0073727E /* DetailsViewController.m */; };
 		19887BA620F82C5F0073727E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19887BA520F82C5F0073727E /* Assets.xcassets */; };
+		19887BAB20F900A80073727E /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19887BAA20F900A70073727E /* Billabong.ttf */; };
 		19F4B06020F40C3700C9F830 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B05F20F40C3700C9F830 /* AppDelegate.m */; };
 		19F4B06620F40C3700C9F830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06420F40C3700C9F830 /* Main.storyboard */; };
 		19F4B06B20F40C3800C9F830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06920F40C3800C9F830 /* LaunchScreen.storyboard */; };
@@ -44,6 +45,7 @@
 		19887B5B20F663AD0073727E /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		19887B5C20F663AD0073727E /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		19887BA520F82C5F0073727E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19887BAA20F900A70073727E /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		19F4B05B20F40C3700C9F830 /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F4B05E20F40C3700C9F830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19F4B05F20F40C3700C9F830 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		19887BA720F8FDF80073727E /* font */ = {
+			isa = PBXGroup;
+			children = (
+				19887BAA20F900A70073727E /* Billabong.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		19F4B05220F40C3700C9F830 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 		19F4B05D20F40C3700C9F830 /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				19887BA720F8FDF80073727E /* font */,
 				19887B5A20F65CF70073727E /* Views */,
 				19F4B09A20F5262400C9F830 /* Model */,
 				19F4B09020F41A6700C9F830 /* View Controllers */,
@@ -313,6 +324,7 @@
 				19F4B06B20F40C3800C9F830 /* LaunchScreen.storyboard in Resources */,
 				19887BA620F82C5F0073727E /* Assets.xcassets in Resources */,
 				19F4B06620F40C3700C9F830 /* Main.storyboard in Resources */,
+				19887BAB20F900A80073727E /* Billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

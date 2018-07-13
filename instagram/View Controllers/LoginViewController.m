@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
 
@@ -19,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.loginButton.layer.borderWidth = 0.3;
 }
 
 #pragma mark - fields checks
@@ -116,5 +119,13 @@
         }
     }];
 }
+
+#pragma mark - actions
+
+- (IBAction)viewTap:(id)sender {
+    [self.passwordField resignFirstResponder];
+    [self.usernameField resignFirstResponder];
+}
+
 
 @end
