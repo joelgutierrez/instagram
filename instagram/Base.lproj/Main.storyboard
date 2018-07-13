@@ -312,7 +312,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9n-vk-V5V">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hands-with-photographic-camera" translatesAutoresizingMaskIntoConstraints="NO" id="a9n-vk-V5V">
                                 <rect key="frame" x="16" y="78" width="121" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -414,6 +414,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hands-with-photographic-camera" width="1000" height="688"/>
         <image name="iconmonstr-bookmark-2-240" width="240" height="240"/>
         <image name="iconmonstr-favorite-2-240" width="240" height="240"/>
         <image name="iconmonstr-paper-plane-2-240" width="240" height="240"/>
@@ -422,6 +423,6 @@
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bBT-Oe-GOU"/>
+        <segue reference="b95-G5-0LV"/>
     </inferredMetricsTieBreakers>
 </document>

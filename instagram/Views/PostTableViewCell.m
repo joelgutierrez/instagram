@@ -31,6 +31,8 @@
     [self formatTimeStamp:self.post.createdAt];
 }
 
+#pragma mark - formatting
+
 -(void) formatUsernameAndCaption {
     NSString *usernameToBeBold = self.userPF.username;
     NSString *usernameAndCaption = [NSString stringWithFormat:@"%@ %@", usernameToBeBold, self.post[@"caption"]];
@@ -49,7 +51,5 @@
     NSString *fullString = [modString stringByAppendingString:@" ago"];
     self.timeLabel.text = fullString;
 }
-
-
 
 @end

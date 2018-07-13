@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		19887B5D20F663AD0073727E /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19887B5C20F663AD0073727E /* DetailsViewController.m */; };
+		19887BA620F82C5F0073727E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19887BA520F82C5F0073727E /* Assets.xcassets */; };
 		19F4B06020F40C3700C9F830 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B05F20F40C3700C9F830 /* AppDelegate.m */; };
 		19F4B06620F40C3700C9F830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06420F40C3700C9F830 /* Main.storyboard */; };
-		19F4B06820F40C3800C9F830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06720F40C3800C9F830 /* Assets.xcassets */; };
 		19F4B06B20F40C3800C9F830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06920F40C3800C9F830 /* LaunchScreen.storyboard */; };
 		19F4B06E20F40C3800C9F830 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B06D20F40C3800C9F830 /* main.m */; };
 		19F4B07820F40C3800C9F830 /* instagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B07720F40C3800C9F830 /* instagramTests.m */; };
@@ -43,11 +43,11 @@
 /* Begin PBXFileReference section */
 		19887B5B20F663AD0073727E /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		19887B5C20F663AD0073727E /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		19887BA520F82C5F0073727E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19F4B05B20F40C3700C9F830 /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F4B05E20F40C3700C9F830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19F4B05F20F40C3700C9F830 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		19F4B06520F40C3700C9F830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		19F4B06720F40C3800C9F830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19F4B06A20F40C3800C9F830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19F4B06C20F40C3800C9F830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19F4B06D20F40C3800C9F830 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,10 +138,10 @@
 				19F4B05E20F40C3700C9F830 /* AppDelegate.h */,
 				19F4B05F20F40C3700C9F830 /* AppDelegate.m */,
 				19F4B06420F40C3700C9F830 /* Main.storyboard */,
-				19F4B06720F40C3800C9F830 /* Assets.xcassets */,
 				19F4B06920F40C3800C9F830 /* LaunchScreen.storyboard */,
 				19F4B06C20F40C3800C9F830 /* Info.plist */,
 				19F4B06D20F40C3800C9F830 /* main.m */,
+				19887BA520F82C5F0073727E /* Assets.xcassets */,
 			);
 			path = instagram;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F4B06B20F40C3800C9F830 /* LaunchScreen.storyboard in Resources */,
-				19F4B06820F40C3800C9F830 /* Assets.xcassets in Resources */,
+				19887BA620F82C5F0073727E /* Assets.xcassets in Resources */,
 				19F4B06620F40C3700C9F830 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

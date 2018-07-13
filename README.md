@@ -36,9 +36,8 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] on user log out, new pages are not created
-- [x] error warning is displayed if the user leaves any of the textboxes empty when trying to sign up or login
+- [x] specific error warning is displayed if the user leaves the username or password field empty during sign up or login
 - [x] autolayout on home feed
-- [ ] show error message when user tries to access camera when not available
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 1. parse - just want some more exposure with it

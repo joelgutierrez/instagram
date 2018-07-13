@@ -30,17 +30,12 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-    
-    //TODO: Do something with the images (based on your use case)
-    [self resizeImage:originalImage withSize:CGSizeMake(350, 350)];
-    self.composeImage.image = originalImage;
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    UIImage *reeditedImage = [self resizeImage:editedImage withSize:CGSizeMake(350, 350)];
+    self.composeImage.image = reeditedImage;
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];

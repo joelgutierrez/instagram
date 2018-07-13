@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
@@ -20,29 +21,53 @@
     [super viewDidLoad];
 }
 
-- (void) createWarning {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Title" message:@"Message" preferredStyle:(UIAlertControllerStyleAlert)];
-    
+#pragma mark - fields checks
+
+-(void) createEmptyUsernameWarning {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Empty username" preferredStyle:(UIAlertControllerStyleAlert)];
+    [self createWarningActions:alert];
+    [self presentViewController:alert animated:YES completion:^{}];
+}
+
+-(void) createEmptyPasswordWarning {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Empty password" preferredStyle:(UIAlertControllerStyleAlert)];
+    [self createWarningActions:alert];
+    [self presentViewController:alert animated:YES completion:^{}];
+}
+
+-(void) createWarningActions:(UIAlertController *)alert {
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"cancel button clicked");
     }];
+    
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"ok button clicked");
     }];
     
     [alert addAction:okAction];
     [alert addAction:cancelAction];
-    
-    [self presentViewController:alert animated:YES completion:^{
-    }];
 }
 
-- (BOOL) areFieldsEmpty {
-    if([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""]){
+- (BOOL) isPasswordFieldEmpty:(NSString *)password {
+    if([self.passwordField.text isEqual:@""]){
+        [self createEmptyPasswordWarning];
         return YES;
     } else {
         return NO;
     }
+}
+
+- (BOOL) isUsernameFieldEmpty:(NSString *)username {
+    if ([self.usernameField.text isEqual:@""]) {
+        [self createEmptyUsernameWarning];
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+-(BOOL) emptyFields:(NSString *)username password:(NSString *)password {
+    return [self isUsernameFieldEmpty:username] || [self isPasswordFieldEmpty:password];
 }
 
 #pragma mark - login
@@ -54,12 +79,10 @@
 - (void)loginUser {
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
-    
-    if([self areFieldsEmpty]) {
-        [self createWarning];
+    if([self emptyFields:username password:password]) {
         return;
     }
-    
+
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             NSLog(@"User log in failed: %@", error.localizedDescription);
@@ -79,9 +102,7 @@
     PFUser *newUser = [PFUser user];
     newUser.username = self.usernameField.text;
     newUser.password = self.passwordField.text;
-    
-    if([self areFieldsEmpty]) {
-        [self createWarning];
+    if([self emptyFields:newUser.username password:newUser.password]) {
         return;
     }
     

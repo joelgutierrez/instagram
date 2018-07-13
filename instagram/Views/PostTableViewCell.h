@@ -13,6 +13,7 @@
 
 @interface PostTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) PFUser *userPF;
 @property (strong, nonatomic) Post *post;
 @property (weak, nonatomic) IBOutlet PFImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
@@ -22,8 +23,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameAndCaptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *topUsernameLabel;
-@property (strong, nonatomic) PFUser *userPF;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-
 
 @end
