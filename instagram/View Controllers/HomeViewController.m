@@ -25,6 +25,7 @@
     [self fetchTimeLinePosts];
     [self createRefreshControl];
     [self setTimelineLayout];
+    self.timelineView.delegate = self;
 }
 
 -(void)setTimelineLayout {
@@ -51,7 +52,7 @@
 -(void) fetchDataAsynch:(PFQuery *)postQuery {
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-            self.postsArray = posts;
+            self.postsArray = [[NSMutableArray alloc] initWithArray:posts];
             [self.timelineView reloadData];
         }
         else {
@@ -65,14 +66,11 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if(!self.isMoreDataLoading){
-        self.isMoreDataLoading = YES;
         int scrollViewContentHeight = self.timelineView.contentSize.height;
         int scrollOffsetThreshold = scrollViewContentHeight - self.timelineView.bounds.size.height;
-        
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.timelineView.isDragging) {
             self.isMoreDataLoading = YES;
-            NSLog(@"in scroll!");
-            
+            [self infiniteScroll];
         }
     }
 }
@@ -86,13 +84,14 @@
     [postQuery whereKey:@"createdAt" lessThan:post.createdAt];
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
+            NSLog(@"Successful scrolling update!");
             NSMutableArray *rows = [[NSMutableArray alloc] init];
             for(Post *p in posts) {
                 [self.postsArray addObject:p];
                 NSIndexPath *newrow = [NSIndexPath indexPathForRow:self.postsArray.count-1 inSection:0];
                 [rows addObject:newrow];
             }
-            
+            [self.timelineView insertRowsAtIndexPaths:rows withRowAnimation:UITableViewRowAnimationNone];
         }
         else {
             NSLog(@"Error getting home timeline: %@", error.localizedDescription);
