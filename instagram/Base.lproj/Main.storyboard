@@ -422,6 +422,7 @@
                     <connections>
                         <outlet property="composeImage" destination="a9n-vk-V5V" id="yri-eb-9l4"/>
                         <outlet property="composeTextField" destination="4Za-O3-SSt" id="hAs-PM-4Rs"/>
+                        <outlet property="composeView" destination="JFt-lx-Ksk" id="wd2-iM-dSJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRF-t3-kLd" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "MBProgressHUD.h"
 
 @protocol ComposeViewControllerDelegate
 

@@ -13,19 +13,25 @@
 @property (weak, nonatomic) IBOutlet UIImageView *composeImage;
 @property (strong, nonatomic) UIImagePickerController *imagePickerVC;
 @property (weak, nonatomic) IBOutlet UITextView *composeTextField;
+@property (strong, nonatomic) IBOutlet UIView *composeView;
 
 @end
 
 @implementation ComposeViewController
 
+BOOL isMoreDataLoading = NO;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initImagePicker];
+    [self presentViewController:self.imagePickerVC animated:YES completion:nil];
+}
+
+-(void)initImagePicker {
     self.imagePickerVC = [UIImagePickerController new];
     self.imagePickerVC.delegate = self;
     self.imagePickerVC.allowsEditing = YES;
     self.imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-
-    [self presentViewController:self.imagePickerVC animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -51,17 +57,18 @@
 #pragma mark - actions
 
 - (IBAction)postTap:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.composeView animated:YES];
     [Post postUserImage:self.composeImage.image withCaption:self.composeTextField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if(error != nil) {
             NSLog(@"error: could not post.");
         } else {
             NSLog(@"Successful post.");
+            [MBProgressHUD hideHUDForView:self.composeView animated:YES];
             [self.delegate didPost];
             [self dismissViewControllerAnimated:true completion:nil];
         }
     }];
 }
-
 
 - (IBAction)imageTapped:(id)sender {
     NSLog(@"image tapped");
