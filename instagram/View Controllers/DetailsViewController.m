@@ -21,8 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setPostDetails];
-//    self.detailsTableView.rowHeight = UITableViewAutomaticDimension;
-//    self.detailsTableView.estimatedRowHeight = 600;
 }
 
 -(void) setPostDetails {
@@ -39,7 +37,6 @@
     formatter.dateStyle = NSDateFormatterShortStyle;
     formatter.timeStyle = NSDateFormatterNoStyle;
     NSString *dateString = [formatter stringFromDate:createdAtDate];
-    //NSString *modString = [NSDate shortTimeAgoSinceDate:date];
     self.timeLabel.text = dateString;
 }
 

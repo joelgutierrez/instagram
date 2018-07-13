@@ -22,10 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setDataSourceAndDelegate];
-    [self fetchTimeLinePosts];
+    [self fetchInitialPosts];
     [self createRefreshControl];
     [self setTimelineLayout];
     self.timelineView.delegate = self;
+}
+
+- (void) setDataSourceAndDelegate {
+    self.timelineView.delegate = self;
+    self.timelineView.dataSource = self;
 }
 
 -(void)setTimelineLayout {
@@ -33,23 +38,33 @@
     self.timelineView.estimatedRowHeight = 600;
 }
 
+- (void) createRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchInitialPosts) forControlEvents:UIControlEventValueChanged];
+    [self.timelineView insertSubview:self.refreshControl atIndex:0];
+}
+
 #pragma mark - networking
 
-- (void)fetchTimeLinePosts {
+- (void)fetchInitialPosts {
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     [postQuery includeKey:@"createdAt"];
-    [self fetchDataAsynch:postQuery];
+    [self displayInitialPosts:postQuery];
 }
 
-- (void) createRefreshControl {
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(fetchTimeLinePosts) forControlEvents:UIControlEventValueChanged];
-    [self.timelineView insertSubview:self.refreshControl atIndex:0];
+-(PFQuery *)fetchMorePosts {
+    Post *post = self.postsArray[self.postsArray.count-1];
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    [postQuery includeKey:@"createdAt"];
+    [postQuery whereKey:@"createdAt" lessThan:post.createdAt];
+    return postQuery;
 }
 
--(void) fetchDataAsynch:(PFQuery *)postQuery {
+-(void) displayInitialPosts:(PFQuery *)postQuery {
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             self.postsArray = [[NSMutableArray alloc] initWithArray:posts];
@@ -57,6 +72,25 @@
         }
         else {
             NSLog(@"Error getting home timeline: %@", error.localizedDescription);
+        }
+        [self.refreshControl endRefreshing];
+    }];
+}
+
+-(void)displayMorePosts:(PFQuery *)postQuery {
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            NSLog(@"Successful scrolling update!");
+            NSMutableArray *rows = [[NSMutableArray alloc] init];
+            for(Post *p in posts) {
+                [self.postsArray addObject:p];
+                NSIndexPath *newrow = [NSIndexPath indexPathForRow:self.postsArray.count-1 inSection:0];
+                [rows addObject:newrow];
+            }
+            [self.timelineView insertRowsAtIndexPaths:rows withRowAnimation:UITableViewRowAnimationNone];
+        }
+        else {
+            NSLog(@"Error getting new timeline: %@", error.localizedDescription);
         }
         [self.refreshControl endRefreshing];
     }];
@@ -70,42 +104,12 @@
         int scrollOffsetThreshold = scrollViewContentHeight - self.timelineView.bounds.size.height;
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.timelineView.isDragging) {
             self.isMoreDataLoading = YES;
-            [self infiniteScroll];
+            [self displayMorePosts:[self fetchMorePosts]];
         }
     }
 }
 
--(void)infiniteScroll {
-    Post *post = self.postsArray[self.postsArray.count-1];
-    PFQuery *postQuery = [Post query];
-    [postQuery orderByDescending:@"createdAt"];
-    [postQuery includeKey:@"author"];
-    [postQuery includeKey:@"createdAt"];
-    [postQuery whereKey:@"createdAt" lessThan:post.createdAt];
-    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
-        if (posts) {
-            NSLog(@"Successful scrolling update!");
-            NSMutableArray *rows = [[NSMutableArray alloc] init];
-            for(Post *p in posts) {
-                [self.postsArray addObject:p];
-                NSIndexPath *newrow = [NSIndexPath indexPathForRow:self.postsArray.count-1 inSection:0];
-                [rows addObject:newrow];
-            }
-            [self.timelineView insertRowsAtIndexPaths:rows withRowAnimation:UITableViewRowAnimationNone];
-        }
-        else {
-            NSLog(@"Error getting home timeline: %@", error.localizedDescription);
-        }
-        [self.refreshControl endRefreshing];
-    }];
-}
-
 #pragma mark - table view protocol
-
-- (void) setDataSourceAndDelegate {
-    self.timelineView.delegate = self;
-    self.timelineView.dataSource = self;
-}
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.postsArray.count;
@@ -121,7 +125,7 @@
 #pragma mark - ComposeViewControllerDelegate protocol
 
 - (void)didPost {
-    [self fetchTimeLinePosts];
+    [self fetchInitialPosts];
 }
 
 #pragma mark - actions
@@ -141,7 +145,6 @@
 }
 
 #pragma mark - Navigation
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UINavigationController *navController = [segue destinationViewController];
