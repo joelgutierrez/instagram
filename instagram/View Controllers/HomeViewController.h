@@ -16,6 +16,6 @@
 #import "DetailsViewController.h"
 
 //TODO: uncomment protocols
-@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
+@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate, UIScrollViewDelegate>
 
 @end

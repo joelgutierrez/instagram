@@ -10,9 +10,10 @@
 
 @interface HomeViewController ()
 
-@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *timelineView;
-@property (strong, nonatomic) NSArray *postsArray;
+@property (strong, nonatomic) NSMutableArray *postsArray;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -23,6 +24,10 @@
     [self setDataSourceAndDelegate];
     [self fetchTimeLinePosts];
     [self createRefreshControl];
+    [self setTimelineLayout];
+}
+
+-(void)setTimelineLayout {
     self.timelineView.rowHeight = UITableViewAutomaticDimension;
     self.timelineView.estimatedRowHeight = 600;
 }
@@ -34,7 +39,6 @@
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     [postQuery includeKey:@"createdAt"];
-    postQuery.limit = 20;
     [self fetchDataAsynch:postQuery];
 }
 
@@ -49,6 +53,46 @@
         if (posts) {
             self.postsArray = posts;
             [self.timelineView reloadData];
+        }
+        else {
+            NSLog(@"Error getting home timeline: %@", error.localizedDescription);
+        }
+        [self.refreshControl endRefreshing];
+    }];
+}
+
+# pragma mark - scroll view delagate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(!self.isMoreDataLoading){
+        self.isMoreDataLoading = YES;
+        int scrollViewContentHeight = self.timelineView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.timelineView.bounds.size.height;
+        
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.timelineView.isDragging) {
+            self.isMoreDataLoading = YES;
+            NSLog(@"in scroll!");
+            
+        }
+    }
+}
+
+-(void)infiniteScroll {
+    Post *post = self.postsArray[self.postsArray.count-1];
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    [postQuery includeKey:@"createdAt"];
+    [postQuery whereKey:@"createdAt" lessThan:post.createdAt];
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            NSMutableArray *rows = [[NSMutableArray alloc] init];
+            for(Post *p in posts) {
+                [self.postsArray addObject:p];
+                NSIndexPath *newrow = [NSIndexPath indexPathForRow:self.postsArray.count-1 inSection:0];
+                [rows addObject:newrow];
+            }
+            
         }
         else {
             NSLog(@"Error getting home timeline: %@", error.localizedDescription);
