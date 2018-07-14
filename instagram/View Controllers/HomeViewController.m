@@ -49,7 +49,6 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    [postQuery includeKey:@"createdAt"];
     [self displayInitialPosts:postQuery];
 }
 
@@ -58,7 +57,6 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    [postQuery includeKey:@"createdAt"];
     [postQuery whereKey:@"createdAt" lessThan:post.createdAt];
     return postQuery;
 }

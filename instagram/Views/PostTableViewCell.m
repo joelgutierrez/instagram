@@ -19,6 +19,10 @@
     self.topUsernameLabel.text = self.userPF.username;
     [self formatUsernameAndCaption];
     [self formatTimeStamp:self.post.createdAt];
+    self.profilePic.file = self.userPF[@"profilePic"];
+    [self.profilePic loadInBackground];
+    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.height/2;
+    self.profilePic.clipsToBounds = YES;
 }
 
 #pragma mark - formatting

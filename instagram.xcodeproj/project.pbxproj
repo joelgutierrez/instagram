@@ -10,6 +10,8 @@
 		19887B5D20F663AD0073727E /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19887B5C20F663AD0073727E /* DetailsViewController.m */; };
 		19887BA620F82C5F0073727E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19887BA520F82C5F0073727E /* Assets.xcassets */; };
 		19887BAB20F900A80073727E /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19887BAA20F900A70073727E /* Billabong.ttf */; };
+		19887BB420F971030073727E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19887BB320F971030073727E /* ProfileViewController.m */; };
+		19887BB720F9714A0073727E /* UsersPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19887BB620F9714A0073727E /* UsersPostCell.m */; };
 		19F4B06020F40C3700C9F830 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4B05F20F40C3700C9F830 /* AppDelegate.m */; };
 		19F4B06620F40C3700C9F830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06420F40C3700C9F830 /* Main.storyboard */; };
 		19F4B06B20F40C3800C9F830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F4B06920F40C3800C9F830 /* LaunchScreen.storyboard */; };
@@ -46,6 +48,10 @@
 		19887B5C20F663AD0073727E /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		19887BA520F82C5F0073727E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19887BAA20F900A70073727E /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
+		19887BB220F971030073727E /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		19887BB320F971030073727E /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		19887BB520F9714A0073727E /* UsersPostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsersPostCell.h; sourceTree = "<group>"; };
+		19887BB620F9714A0073727E /* UsersPostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UsersPostCell.m; sourceTree = "<group>"; };
 		19F4B05B20F40C3700C9F830 /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F4B05E20F40C3700C9F830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19F4B05F20F40C3700C9F830 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 			children = (
 				19F4B09E20F5655700C9F830 /* PostTableViewCell.h */,
 				19F4B09F20F5655700C9F830 /* PostTableViewCell.m */,
+				19887BB520F9714A0073727E /* UsersPostCell.h */,
+				19887BB620F9714A0073727E /* UsersPostCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +194,8 @@
 				19F4B09820F433A700C9F830 /* ComposeViewController.m */,
 				19887B5B20F663AD0073727E /* DetailsViewController.h */,
 				19887B5C20F663AD0073727E /* DetailsViewController.m */,
+				19887BB220F971030073727E /* ProfileViewController.h */,
+				19887BB320F971030073727E /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -397,6 +407,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F4B06E20F40C3800C9F830 /* main.m in Sources */,
+				19887BB420F971030073727E /* ProfileViewController.m in Sources */,
+				19887BB720F9714A0073727E /* UsersPostCell.m in Sources */,
 				19F4B09D20F5264400C9F830 /* Post.m in Sources */,
 				19F4B06020F40C3700C9F830 /* AppDelegate.m in Sources */,
 				19F4B0A020F5655700C9F830 /* PostTableViewCell.m in Sources */,

@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) PFUser *userPF;
 @property (strong, nonatomic) Post *post;
+@property (weak, nonatomic) IBOutlet PFImageView *profilePic;
 @property (weak, nonatomic) IBOutlet PFImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *messageButton;

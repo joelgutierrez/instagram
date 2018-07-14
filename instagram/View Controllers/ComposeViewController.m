@@ -11,9 +11,9 @@
 @interface ComposeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *composeImage;
-@property (strong, nonatomic) UIImagePickerController *imagePickerVC;
 @property (weak, nonatomic) IBOutlet UITextView *composeTextField;
 @property (strong, nonatomic) IBOutlet UIView *composeView;
+@property (strong, nonatomic) UIImagePickerController *imagePickerVC;
 
 @end
 
@@ -56,6 +56,10 @@ BOOL isMoreDataLoading = NO;
 
 #pragma mark - actions
 
+- (IBAction)cancelTapped:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 - (IBAction)postTap:(id)sender {
     [MBProgressHUD showHUDAddedTo:self.composeView animated:YES];
     [Post postUserImage:self.composeImage.image withCaption:self.composeTextField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
@@ -71,7 +75,6 @@ BOOL isMoreDataLoading = NO;
 }
 
 - (IBAction)imageTapped:(id)sender {
-    NSLog(@"image tapped");
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         self.imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
