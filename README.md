@@ -48,7 +48,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/Eq3RLRS.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+GIF file was too big. Look in file list to find and view the project gif.
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
